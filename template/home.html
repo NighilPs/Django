@@ -1,0 +1,328 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>NPS Hospital</title>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function() {
+
+     $(".menu-icon").on("click", function() {
+
+              $("nav ul").toggleClass("showing");
+
+});
+
+});
+
+
+// Scrolling Effect
+
+
+$(window).on("scroll", function() {
+
+if($(window).scrollTop()) {
+
+$('nav').addClass('black');
+
+}
+
+
+else {
+
+$('nav').removeClass('black');
+
+}
+
+})
+</script>
+<style>
+html{
+ scroll-behavior:smooth;
+ }
+html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+}
+
+
+body {
+      font-family: "Helvetica Neue",sans-serif;
+      font-weight: lighter;
+}
+
+header {
+      width: 100%;
+      height: 120vh;
+      background: url({% static 'wall2.jpg' %}) no-repeat 50% 50%;
+      background-size: cover;
+
+
+}
+
+
+.content {
+     width: 94%;
+      margin: 4em auto;
+      font-size: 20px;
+     line-height: 30px;
+      text-align: justify;
+}
+
+
+.logo {
+      line-height: 60px;
+      position: fixed;
+      float: left;
+      margin: 16px 46px;
+      color: black;
+      font-weight: 1000;
+      font-size: 20px;
+      letter-spacing: 2px;
+      font-family:Georgia, serif;
+}
+
+
+nav
+{
+      position: fixed;
+      width: 100%;
+      line-height: 60px;
+}
+
+
+nav ul {
+      line-height: 90px;
+      list-style: none;
+      background: rgba(0, 0, 0, 0);
+      overflow: hidden;
+      color: #fff;
+      padding: 0;
+      text-align: right;
+      margin: 0;
+      padding-right: 40px;
+      transition: 1s;
+
+}
+
+
+nav.black ul {
+      background: gray;
+
+}
+
+
+nav ul li {
+      display: inline-block;
+      padding: 16px 40px;;
+}
+
+nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+}
+
+
+.menu-icon
+{
+      line-height: 60px;
+      width: 100%;
+      background: #000;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 15px 24px;
+      cursor: pointer;
+      color: #fff;
+      display: none;
+
+}
+
+
+@media(max-width: 786px) {
+
+      .logo {
+            position: fixed;
+            top: 0;
+            margin-top: 16px;
+      }
+
+      nav ul {
+            max-height: 0px;
+            background: #000;
+      }
+
+      nav.black ul {
+           background: #000;
+      }
+
+      .showing {
+           max-height: 34em;
+     }
+
+     nav ul li {
+           box-sizing: border-box;
+           width: 100%;
+           padding: 24px;
+           text-align: center;
+      }
+
+      .menu-icon {
+            display: block;
+
+}
+
+}
+.topnav a:hover {
+    border-bottom: 3px solid white;
+    color:black;
+  }
+
+  .topnav a.active {
+    border-bottom: 3px solid white;
+  }
+  .topnav {
+    overflow: hidden;
+    background-color:transparent;
+  }
+.topnav a {
+display: block;
+    color: white;
+    text-align: center;
+   text-decoration: none;
+   font-size: 17px;
+   border-bottom: 3px solid transparent;
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper" id="Home">
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="logo">NPS Hospital
+            </div>
+            <div class="menu">
+                <ul class="topnav">
+                    <li><a href="#Home" class="fa fa-home" class="active">Home</a></li>
+                    <li><a href="#About" class="fa fa-building" >About us</a></li>
+                    <li><a href="#Contact" class="fa fa-envelope">Contact</a></li>
+                    <li><a href="book" class="fa fa-book" data-toggle="modal" data-target="#myModal" class="btn btn-primary"  >Book An Appointment</a></li>
+                    <li><a href="#" class="fa fa-phone">111-222-333</a> </li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+
+        <div class="modal" id="myModal" style="font-family:cursive;">
+         <div class="modal-dialog" style="width:290px">
+             <div class="modal-content">
+
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title" >Login</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form action="login" method="post">
+                {% csrf_token %}
+                <input type="text"  id="ida"  placeholder="username" name="username" style="width:250px; height:40px;"><br><br>
+                <input type="password" placeholder="password" name="password" style="width:250px; height:40px"><br><br>
+                <center><button type="submit"  class="btn btn-primary" id="ida" name="ida">Book Now</button></center>
+            </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer" style="align-text:center">
+            <i><pre>Are you new here?<a href="sign">Sign up</a>     </i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    </header>
+
+
+
+
+
+</div>
+
+<div class="content" id="About" style="background-color:;">
+    <br><br><br>
+    <h2>About us</h2>
+    <p style="text-indent: 100px;">NPS Hospital is a Registered Charity under the Charities Acts (Registered Charity No. 20000394) and is administered and managed in accordance with a Hospital Constitution approved by the Charities Regulatory Authority.  The current Hospital Constitution was approved in 1918.  The property is vested in Trustees.
+        NPS Hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment.
+    <br><p style="text-indent: 100px;"><b>“Our Mission is to bring healthcare of International standards within the reach of every individual. We are committed to the achievement and maintenance of excellence in education, research and healthcare for the benefit of humanity”</b></p>
+    <p style="text-indent: 100px;">NPS Hospital is a Registered Charity under the Charities Acts (Registered Charity No. 20000394) and is administered and managed in accordance with a Hospital Constitution approved by the Charities Regulatory Authority.  The current Hospital Constitution was approved in 1918.  The property is vested in Trustees.
+        NPS Hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment.
+    <br><p style="text-indent: 100px;"><b>“Our Mission is to bring healthcare of International standards within the reach of every individual. We are committed to the achievement and maintenance of excellence in education, research and healthcare for the benefit of humanity”</b></p>
+<br><br>
+</div>
+<div class="content" id="Contact">
+    <h2>Contact</h2>
+    <h4><p>Lets Keep in touch</P></h4>
+        <form action="comment" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="cmd" placeholder="Comment" name="cmd">
+            </div>
+            <input type="submit" class="btn btn-default">
+        </form>
+</div>
+<footer style="background-color:black;">
+    <center><a href="home" style="color:white">www.npshopital.com</a></center>
+    <a href="doc"><button type="button" class="btn btn-dark" style="background-color:black">I'm a Doc</button></a>
+</footer>
+</body>
+
+</html>

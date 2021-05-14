@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    function myFunction(){
+      window.open("home");
+      }
+</script>
+</head>
+<body>
+<table border="2">
+
+    <form action="old_bookings" method="post">
+        {% csrf_token %}
+    <tr><th>Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>DoB</th>
+    <th>Booking Date</th>
+    <th>From</th>
+    <th>End</th>
+    <th>Symptoms</th>
+    <th>Prescription</th></tr>
+        {% for i in d %}
+    <tr><td>{{i.name}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.phn}}</td>
+    <td>{{i.dob}}</td>
+        <td><input type="hidden" name="date" value="{{i.date}}">{{i.date}}</input></td>
+    <td>{{i.start}}</td>
+    <td>{{i.end}}</td>
+    <td>{{i.sym}}</td>
+    <td>{{i.pres}}</td>
+    <td><button type="submit" value="{{i.id}}" name="ida" >Book</a></td></tr>
+{% endfor %}
+    </form>
+
+</table>
+
+</body>
+</html>

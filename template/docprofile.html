@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  text-align:center;
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: cover;
+
+}
+
+
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+</style>
+</head>
+<body>
+<form action="appoinment" method="post">
+  {% csrf_token %}
+{% for i in d %}
+
+
+<div class="tab">
+  <img src="{{i.image.url}}" alt="Doctor" width="200" height="200" style="border:rounded">
+  <h2>Dr.{{i.name}}</h2>
+  <h5>{{i.studies}}</h5>
+  <button type="submit" value="{{i.name}}" name="book" class="btn btn-primary">Book An Appoinment</button>
+</div>
+
+<div class="tabcontent">
+  <h3>{{i.name}}</h3>
+  <h4>{{i.department}}</h4>
+  <p>{{i.about}}</p>
+  <table border="4px">
+    <tr><th>Available Dates</th><td>{{i.date}}</td></tr>
+    <tr><th>Time</th><td>10am-4pm</td></tr>
+  </table>
+</div>
+
+{% endfor %}
+</form>
+</body>
+</html>

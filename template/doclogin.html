@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    function myFunction(){
+      window.open("home");
+      }
+</script>
+</head>
+<body>
+<table border="2" class="table">
+
+
+    <form action="edit" method="post">
+        {% csrf_token %}
+        <thead>
+    <tr><th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Phone Number</th>
+    <th scope="col">DoB</th>
+    <th scope="col">Booking Date</th>
+    <th scope="col">From</th>
+    <th scope="col">End</th>
+    <th scope="col">Symptoms</th>
+    <th scope="col">Prescription</th></tr>
+        {% for i in d %}
+    </thead>
+        <tbody>
+    <tr><td>{{i.name}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.phn}}</td>
+    <td>{{i.dob}}</td>
+        <td><input type="hidden" name="date" value="{{i.date}}">{{i.date}}</input></td>
+    <td>{{i.start}}</td>
+    <td>{{i.end}}</td>
+    <td>{{i.sym}}</td>
+    <td>{{i.pres}}</td>
+    <td><button type="submit" value="{{i.id}}" name="view" >View</a></td></tr>
+        </tbody>
+{% endfor %}
+    </form>
+
+</table>
+<br>
+<a href="today">Today's Appoinment</a>
+<form action="date" method="POST">
+     {% csrf_token %}
+    <input type="date"  name="date" class="btn btn-default"></input>
+    <button type="submit" class="btn btn-primary"><i class="fa fa-search">Search For a date</i></button>
+        <br>
+    <a href="logout" onclick="myFunction()" class="btn btn-danger">Logout</a>
+</form>
+</body>
+</html>

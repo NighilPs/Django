@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+ <section>
+   <form action="submit" method="post">
+     {% csrf_token %}
+    <div class="container">
+      <div class="row justify-content-center">
+        <di class="col-12 col-md-8 col-lg-8 col-xl-6">
+          <div class="row">
+            <div class="col text-center">
+              <h1>Book Now</h1>
+              <p class="text-h3">Consult your favorite Doctor </p>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col mt-4">Date
+              <input type="Date" name="date" class="form-control" placeholder="Date">
+            </div>
+          </div>
+          <div class="row align-items-center mt-4">
+            <div class="col">Starting Time
+              <input type="Time" name="stime" class="form-control" placeholder="Email">
+            </div>
+          </div>
+          <div class="row align-items-center mt-4">
+            <div class="col">Ending Time
+              <input type="time" name="etime" class="form-control" placeholder="time">
+            </div>
+          </div>
+          <div class="row align-items-center mt-4">
+            <div class="col">Symptoms
+              <input type="text" name="sym" class="form-control" placeholder="symptoms">
+            </div>
+          </div>
+          <div class="row justify-content-start mt-4">
+            <div class="col">
+
+
+              <button type="submit" class="btn btn-primary mt-4">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </form>
+  </section>
+</body>
+</html>

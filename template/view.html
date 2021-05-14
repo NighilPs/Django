@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th{
+        width:150px;
+        }
+        td{
+        width:400px;
+        }
+
+    </style>
+</head>
+
+<body>
+<form action="save" method="post">
+    {% csrf_token %}
+<input type="hidden" name="id" id="id" value="{{d.id}}">
+<center>
+    <h2>Patient Details</h2>
+<table border="2" class="table">
+    <tr><th>Name</th><td>{{d.name}}</td></tr>
+    <tr><th>Email</th><td>{{d.email}}</td></tr>
+    <tr><th>Phone Number</th><td>{{d.phn}}</td></tr>
+    <tr><th>Date of Birth</th><td>{{d.dob}}</td></tr>
+    <tr><th>Booking Date</th><td>{{d.date}}</td></tr>
+    <tr><th>From</th><td>{{d.start}}</td></tr>
+    <tr><th>To</th><td>{{d.end}}</td></tr>
+    <tr><th>Symptoms</th><td>{{d.sym}}</td></tr>
+    <tr><th style="float:top">Presciption</th><td><textarea rows="10" cols="80" name="pre">{{d.pres}}</textarea></td></tr>
+
+</table>
+    <button type="submit" class="btn btn-primary" >Save</button>
+</center>
+</form>
+</body>
+</html>
